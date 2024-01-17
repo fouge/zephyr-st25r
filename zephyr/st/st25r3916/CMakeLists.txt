@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
-if(CONFIG_ST25R3916) 
+if (CONFIG_ST25R3916)
     zephyr_compile_definitions("-DST25R3916")
-endif()
+endif ()
 
-if(CONFIG_ST25R3916B) 
+if (CONFIG_ST25R3916B)
     zephyr_compile_definitions("-DST25R3916B")
-endif()
+endif ()
 
 zephyr_library()
 zephyr_library_sources(

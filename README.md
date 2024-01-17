@@ -1,6 +1,6 @@
 # zephyr-st25r
 
-This repo provides a Zephyr module with a driver for the ST25R NFC reader IC. 
+This repo provides a Zephyr module with a driver for the ST25R NFC reader IC.
 In particular, the ST25R3916 and ST25R3916B ICs are supported.
 
 This driver supports at most one instance of the ST25R on the SPI or I2C bus.
@@ -8,7 +8,7 @@ This driver supports at most one instance of the ST25R on the SPI or I2C bus.
 ST's RFAL library is included for driving the IC, with Kconfig variables
 defined to allow configuration and feature selection.
 
-To use, after incorporating the module into your build, add an 
+To use, after incorporating the module into your build, add an
 `st,st25r` compatible SPI or I2C configuration to your device tree
 
 ```
