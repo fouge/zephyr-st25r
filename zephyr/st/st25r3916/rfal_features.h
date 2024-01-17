@@ -33,23 +33,23 @@
 */
 
 #define RFAL_SUPPORT_MODE_POLL_NFCA                                            \
-    true /*!< RFAL Poll NFCA mode support switch    */
+    false /*!< RFAL Poll NFCA mode support switch    */
 #define RFAL_SUPPORT_MODE_POLL_NFCB                                            \
-    true /*!< RFAL Poll NFCB mode support switch    */
+    false /*!< RFAL Poll NFCB mode support switch    */
 #define RFAL_SUPPORT_MODE_POLL_NFCF                                            \
-    true /*!< RFAL Poll NFCF mode support switch    */
+    false /*!< RFAL Poll NFCF mode support switch    */
 #define RFAL_SUPPORT_MODE_POLL_NFCV                                            \
-    true /*!< RFAL Poll NFCV mode support switch    */
+    false /*!< RFAL Poll NFCV mode support switch    */
 #define RFAL_SUPPORT_MODE_POLL_ACTIVE_P2P                                      \
-    true /*!< RFAL Poll AP2P mode support switch    */
+    false /*!< RFAL Poll AP2P mode support switch    */
 #define RFAL_SUPPORT_MODE_LISTEN_NFCA                                          \
     true /*!< RFAL Listen NFCA mode support switch  */
 #define RFAL_SUPPORT_MODE_LISTEN_NFCB                                          \
     false /*!< RFAL Listen NFCB mode support switch  */
 #define RFAL_SUPPORT_MODE_LISTEN_NFCF                                          \
-    true /*!< RFAL Listen NFCF mode support switch  */
+    false /*!< RFAL Listen NFCF mode support switch  */
 #define RFAL_SUPPORT_MODE_LISTEN_ACTIVE_P2P                                    \
-    true /*!< RFAL Listen AP2P mode support switch  */
+    false /*!< RFAL Listen AP2P mode support switch  */
 
 /*******************************************************************************/
 /*! RFAL supported Card Emulation (CE)        */
@@ -162,11 +162,11 @@ typedef struct {
     bool swTagDetect; /*!< Use SW Tag Detection instead of HW Wake-Up mode */
 
     struct {
-        bool enabled;       /*!< Inductive Amplitude measurement enabled       */
-        uint8_t delta;      /*!< Delta between the reference and measurement to
-                               wake-up     */
-        uint8_t fracDelta;  /*!< Fractional part of the delta [0;3] 0.25 steps
-                               (SW TD only) */
+        bool enabled;      /*!< Inductive Amplitude measurement enabled       */
+        uint8_t delta;     /*!< Delta between the reference and measurement to
+                              wake-up     */
+        uint8_t fracDelta; /*!< Fractional part of the delta [0;3] 0.25 steps
+                              (SW TD only) */
         uint16_t reference; /*!< Reference to be used;RFAL_WUM_REFERENCE_AUTO
                                sets it auto  */
         bool autoAvg;       /*!< Use the HW Auto Averaging feature       */
@@ -216,7 +216,7 @@ typedef struct {
         uint8_t lastMeas;   /*!< Value of the latest measurement   */
         uint16_t reference; /*!< Current reference value (TD format if SW TD
                                enabled)       */
-        bool irqWu;         /*!< Phase WU IRQ received (cleared upon read)         */
+        bool irqWu; /*!< Phase WU IRQ received (cleared upon read)         */
     } indPha; /*!< Inductive Phase                                            */
     struct {
         uint8_t lastMeas;   /*!< Value of the latest measurement   */
