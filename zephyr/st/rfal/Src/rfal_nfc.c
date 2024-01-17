@@ -23,9 +23,8 @@
  ******************************************************************************
  */
 #include "rfal_nfc.h"
-#include "utils.h"
 #include "rfal_analogConfig.h"
-
+#include "rfal_utils.h"
 
 /*
 ******************************************************************************
@@ -313,7 +312,7 @@ void rfalNfcWorker( void )
     ReturnCode err;
    
     rfalWorker();                                                                     /* Execute RFAL process  */
-    
+
     switch( gNfcDev.state )
     {   
         /*******************************************************************************/
@@ -449,17 +448,18 @@ void rfalNfcWorker( void )
         /*******************************************************************************/
         case RFAL_NFC_STATE_DATAEXCHANGE:
 
-            rfalNfcDataExchangeGetStatus();                                           /* Run the internal state machine */
-            
-            if( gNfcDev.dataExErr != ERR_BUSY )                                       /* If Dataexchange has terminated */
-            {
-                gNfcDev.state = RFAL_NFC_STATE_DATAEXCHANGE_DONE;                     /* Go to done state               */
-                rfalNfcNfcNotify( gNfcDev.state );                                    /* And notify caller              */
-            }
-            if( gNfcDev.dataExErr == ERR_SLEEP_REQ )                                  /* Check if Listen mode has to go to Sleep */
-            {
-                gNfcDev.state = RFAL_NFC_STATE_LISTEN_SLEEP;                          /* Go to Listen Sleep state       */
-                rfalNfcNfcNotify( gNfcDev.state );                                    /* And notify caller              */
+            err = rfalNfcDataExchangeGetStatus();                                           /* Run the internal state machine */
+            if (err != ERR_WRONG_STATE) {
+                if( gNfcDev.dataExErr != ERR_BUSY )                                       /* If Dataexchange has terminated */
+                {
+                    gNfcDev.state = RFAL_NFC_STATE_DATAEXCHANGE_DONE;                     /* Go to done state               */
+                    rfalNfcNfcNotify( gNfcDev.state );                                    /* And notify caller              */
+                }
+                if( gNfcDev.dataExErr == ERR_SLEEP_REQ )                                  /* Check if Listen mode has to go to Sleep */
+                {
+                    gNfcDev.state = RFAL_NFC_STATE_LISTEN_SLEEP;                          /* Go to Listen Sleep state       */
+                    rfalNfcNfcNotify( gNfcDev.state );                                    /* And notify caller              */
+                }
             }
             break;
             
@@ -533,7 +533,7 @@ void rfalNfcWorker( void )
         /*******************************************************************************/    
         case RFAL_NFC_STATE_LISTEN_ACTIVATION:
         case RFAL_NFC_STATE_LISTEN_SLEEP:
-            
+
             err = rfalNfcListenActivation();
             if( err != ERR_BUSY )
             {

@@ -24,7 +24,7 @@
 */
 #include "rfal_iso15693_2.h"
 #include "rfal_crc.h"
-#include "utils.h"
+#include "rfal_utils.h"
 
 /*
  ******************************************************************************

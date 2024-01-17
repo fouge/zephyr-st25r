@@ -25,7 +25,7 @@
 ******************************************************************************
 */
 #include "st25r3916_aat.h"
-#include "utils.h"
+#include "rfal_utils.h"
 #include "st_errno.h"
 #include "st25r3916.h"
 #include "st25r3916_com.h"

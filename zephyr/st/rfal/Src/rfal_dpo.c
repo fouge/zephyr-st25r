@@ -29,7 +29,7 @@
 #include "rfal_rf.h"
 #include "rfal_chip.h"
 #include "rfal_analogConfig.h"
-#include "utils.h"
+#include "rfal_utils.h"
 
 
 /*

@@ -24,7 +24,7 @@
  */
 #include "rfal_st25xv.h"
 #include "rfal_nfcv.h"
-#include "utils.h"
+#include "rfal_utils.h"
 
 /*
  ******************************************************************************

@@ -26,7 +26,7 @@
 #include "rfal_chip.h"
 #include "st_errno.h"
 #include "platform.h"
-#include "utils.h"
+#include "rfal_utils.h"
 
 
 /* Check whether the Default Analog settings are to be used or custom ones */

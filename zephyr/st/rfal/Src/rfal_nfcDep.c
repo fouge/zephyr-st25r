@@ -24,7 +24,7 @@
  */
 #include "rfal_nfcDep.h"
 #include "rfal_nfcf.h"
-#include "utils.h"
+#include "rfal_utils.h"
 
 /*
  ******************************************************************************
