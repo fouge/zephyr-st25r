@@ -181,6 +181,9 @@ st25r3916GetInterrupt(uint32_t mask)
 {
     uint32_t irqs;
 
+    /* force a read of the IRQ register to clear the IRQ line */
+    st25r3916CheckForReceivedInterrupts();
+
     irqs = (st25r3916interrupt.status & mask);
     if (irqs != ST25R3916_IRQ_MASK_NONE) {
         platformProtectST25RIrqStatus();
