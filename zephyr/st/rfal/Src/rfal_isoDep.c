@@ -25,7 +25,7 @@
 
 #include "rfal_isoDep.h"
 #include "rfal_rf.h"
-#include "utils.h"
+#include "rfal_utils.h"
 
 /*
  ******************************************************************************

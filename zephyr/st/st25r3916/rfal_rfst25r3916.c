@@ -24,7 +24,7 @@
 */
 
 #include "rfal_chip.h"
-#include "utils.h"
+#include "rfal_utils.h"
 #include "st25r3916.h"
 #include "st25r3916_com.h"
 #include "st25r3916_irq.h"
