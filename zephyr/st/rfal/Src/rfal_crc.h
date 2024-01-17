@@ -1,22 +1,22 @@
 
 /**
-  ******************************************************************************
-  * @file    rfal_crc.h
-  * @author  MMY Application Team
-  * @brief   CRC calculation module
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
-  
+ ******************************************************************************
+ * @file    rfal_crc.h
+ * @author  MMY Application Team
+ * @brief   CRC calculation module
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2021 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
+
 #ifndef RFAL_CRC_H_
 #define RFAL_CRC_H_
 
@@ -32,7 +32,7 @@
 * GLOBAL FUNCTION PROTOTYPES
 ******************************************************************************
 */
-/*! 
+/*!
  *****************************************************************************
  *  \brief  Calculate CRC according to CCITT standard.
  *
@@ -49,7 +49,8 @@
  *
  *****************************************************************************
  */
-extern uint16_t rfalCrcCalculateCcitt(uint16_t preloadValue, const uint8_t* buf, uint16_t length);
+extern uint16_t
+rfalCrcCalculateCcitt(uint16_t preloadValue, const uint8_t *buf,
+                      uint16_t length);
 
 #endif /* RFAL_CRC_H_ */
-

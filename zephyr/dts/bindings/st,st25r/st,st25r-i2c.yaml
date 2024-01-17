@@ -6,4 +6,4 @@ description: ST25R driver on I2C bus
 
 compatible: "st,st25r"
 
-include: ["i2c-device.yaml", "st,st25r-common.yaml"]
+include: [ "i2c-device.yaml", "st,st25r-common.yaml" ]
