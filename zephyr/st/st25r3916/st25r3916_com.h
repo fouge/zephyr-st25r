@@ -183,6 +183,7 @@
                                                                      
 /* IC identity  */                                                   
 #define ST25R3916_REG_IC_IDENTITY                           0x3FU    /*!< R  Chip Id: 0 for old silicon, v2 silicon: 0x09      */
+#define ST25R3918_REG_IC_IDENTITY                           0x2AU    /*!< R  Chip Id: 0 for old silicon, v2 silicon: 0x09      */
 
 
 /*! Register bit definitions  \cond DOXYGEN_SUPRESS */
