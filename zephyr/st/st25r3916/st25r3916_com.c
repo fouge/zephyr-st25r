@@ -29,6 +29,7 @@
 #include "platform.h"
 #include "rfal_utils.h"
 
+LOG_MODULE_REGISTER(st25r3916_com, CONFIG_ST25R_LOG_LEVEL);
 
 /*
 ******************************************************************************

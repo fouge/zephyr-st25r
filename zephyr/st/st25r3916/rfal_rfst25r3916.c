@@ -32,6 +32,7 @@
 #include "rfal_iso15693_2.h"
 #include "rfal_crc.h"
 
+LOG_MODULE_REGISTER(rfal_rfst25r3916, CONFIG_ST25R_LOG_LEVEL);
 
 /*
  ******************************************************************************
@@ -1959,9 +1960,7 @@ static void rfalTransceiveTx( void )
     
     if( gRFAL.TxRx.state != gRFAL.TxRx.lastState )
     {
-        #if 0 /* Debug purposes */
-            rfalLogD( "RFAL: lastSt: %d curSt: %d \r\n", gRFAL.TxRx.lastState, gRFAL.TxRx.state );
-        #endif
+        rfalLogD( "RFAL: lastSt: %d curSt: %d \r\n", gRFAL.TxRx.lastState, gRFAL.TxRx.state );
 
         gRFAL.TxRx.lastState = gRFAL.TxRx.state;
     }
@@ -2267,9 +2266,7 @@ static void rfalTransceiveRx( void )
     
     if( gRFAL.TxRx.state != gRFAL.TxRx.lastState )
     {
-        #if 0 /* Debug purposes */
-            rfalLogD( "RFAL: lastSt: %d curSt: %d \r\n", gRFAL.TxRx.lastState, gRFAL.TxRx.state );
-        #endif
+        rfalLogD( "RFAL: lastSt: %d curSt: %d \r\n", gRFAL.TxRx.lastState, gRFAL.TxRx.state );
 
         gRFAL.TxRx.lastState = gRFAL.TxRx.state;
     }
@@ -2682,9 +2679,7 @@ static void rfalTransceiveRx( void )
                 gRFAL.TxRx.status = ERR_SYSTEM;
             }
 
-            #if 0 /* Debug purposes */ 
-                rfalLogD( "RFAL: curSt: %d  Error: %d \r\n", gRFAL.TxRx.state, gRFAL.TxRx.status );
-            #endif
+            rfalLogD( "RFAL: curSt: %d  Error: %d \r\n", gRFAL.TxRx.state, gRFAL.TxRx.status );
 
             gRFAL.TxRx.state = RFAL_TXRX_STATE_IDLE;
             break;
@@ -4013,17 +4008,13 @@ ReturnCode rfalListenSleepStart( rfalLmState sleepSt, uint8_t *rxBuf, uint16_t r
     /* Check whether the field was turn off right after the Sleep request */
     if( !rfalIsExtFieldOn() )
     {
-        #if 0 /* Debug purposes */
-            rfalLogD( "RFAL: curState: %02X newState: %02X \r\n", gRFAL.Lm.state, RFAL_LM_STATE_NOT_INIT );
-        #endif
-        
+        rfalLogD( "RFAL: curState: %02X newState: %02X \r\n", gRFAL.Lm.state, RFAL_LM_STATE_NOT_INIT );
+
         rfalListenStop();
         return ERR_LINK_LOSS;
     }
-    
-    #if 0 /* Debug purposes */
-        rfalLogD( "RFAL: curState: %02X newState: %02X \r\n", gRFAL.Lm.state, sleepSt );
-    #endif
+
+    rfalLogD( "RFAL: curState: %02X newState: %02X \r\n", gRFAL.Lm.state, sleepSt );
 
     /* Set the new Sleep State*/
     gRFAL.Lm.state    = sleepSt;

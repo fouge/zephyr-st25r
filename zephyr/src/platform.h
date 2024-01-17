@@ -48,6 +48,7 @@ extern "C" {
 #include "st_errno.h"
 #include "timer.h"
 #include <zephyr/drivers/gpio.h>
+#include <zephyr/logging/log.h>
 #include <zephyr/kernel.h>
 
 /** @addtogroup X-CUBE-NFC6_Applications
@@ -198,8 +199,6 @@ void platform_st25r_i2c_recv(uint16_t addr, uint8_t* rxBuf, uint16_t len);
 #define platformI2CRepeatStart()                                                                    /*!< I2C Repeat Start                            */
 #define platformI2CSlaveAddrWR(add)                                                                 /*!< I2C Slave address for Write operation       */
 #define platformI2CSlaveAddrRD(add)                                                                 /*!< I2C Slave address for Read operation        */
-
-#define platformLog(...)                              printk(__VA_ARGS__)                         /*!< Log  method                                 */
 
 /**
   * @}

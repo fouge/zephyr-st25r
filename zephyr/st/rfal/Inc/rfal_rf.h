@@ -173,10 +173,10 @@
     (ctx).fwt       = (uint32_t)(t);
 
 
-#define rfalLogE(...)             platformLog(__VA_ARGS__)        /*!< Macro for the error log method                  */
-#define rfalLogW(...)             platformLog(__VA_ARGS__)        /*!< Macro for the warning log method                */
-#define rfalLogI(...)             platformLog(__VA_ARGS__)        /*!< Macro for the info log method                   */
-#define rfalLogD(...)             platformLog(__VA_ARGS__)        /*!< Macro for the debug log method                  */
+#define rfalLogE(...)             LOG_ERR(__VA_ARGS__)        /*!< Macro for the error log method                  */
+#define rfalLogW(...)             LOG_WRN(__VA_ARGS__)        /*!< Macro for the warning log method                */
+#define rfalLogI(...)             LOG_INF(__VA_ARGS__)        /*!< Macro for the info log method                   */
+#define rfalLogD(...)             LOG_DBG(__VA_ARGS__)        /*!< Macro for the debug log method                  */
 
 
 /*

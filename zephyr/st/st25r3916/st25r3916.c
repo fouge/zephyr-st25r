@@ -28,7 +28,7 @@
 #include "st25r3916_irq.h"
 #include "rfal_utils.h"
 
-
+LOG_MODULE_REGISTER(st25r3916, CONFIG_ST25R_LOG_LEVEL);
 
 /*
  ******************************************************************************
