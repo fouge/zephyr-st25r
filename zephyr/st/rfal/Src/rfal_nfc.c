@@ -26,6 +26,8 @@
 #include "rfal_analogConfig.h"
 #include "rfal_utils.h"
 
+LOG_MODULE_REGISTER(rfal_nfc, CONFIG_ST25R_LOG_LEVEL);
+
 /*
 ******************************************************************************
 * GLOBAL DEFINES

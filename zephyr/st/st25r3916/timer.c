@@ -24,6 +24,7 @@
 */
 #include "timer.h"
 
+LOG_MODULE_REGISTER(rfal_timer, CONFIG_ST25R_LOG_LEVEL);
 
 /*
 ******************************************************************************

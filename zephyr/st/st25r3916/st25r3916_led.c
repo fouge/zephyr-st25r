@@ -27,6 +27,7 @@
 #include "st25r3916_com.h"
 #include "st25r3916.h"
 
+LOG_MODULE_REGISTER(st25r3916_led, CONFIG_ST25R_LOG_LEVEL);
 
 /*
 ******************************************************************************
