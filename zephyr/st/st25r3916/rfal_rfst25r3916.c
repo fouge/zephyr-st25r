@@ -79,15 +79,15 @@ typedef struct {
 
     struct {
         uint8_t lastMeas; /*!< Value of the latest measurement */
-        bool irqWu;       /*!< Amplitude WU IRQ received (cleared upon read)       */
+        bool irqWu; /*!< Amplitude WU IRQ received (cleared upon read)       */
     } indAmp; /*!< Inductive Amplitude                                     */
     struct {
         uint8_t lastMeas; /*!< Value of the latest measurement */
-        bool irqWu;       /*!< Phase WU IRQ received (cleared upon read)       */
+        bool irqWu; /*!< Phase WU IRQ received (cleared upon read)       */
     } indPha; /*!< Inductive Phase                                         */
     struct {
         uint8_t lastMeas; /*!< Value of the latest measurement */
-        bool irqWu;       /*!< Capacitive WU IRQ received (cleared upon read)       */
+        bool irqWu; /*!< Capacitive WU IRQ received (cleared upon read)       */
     } cap; /*!< Capacitance                                             */
 } rfalWakeUpData;
 
@@ -269,7 +269,7 @@ typedef enum {
         0x0C, /*!< acquire the System Code registered to a card */
     FELICA_CMD_AUTHENTICATION1 = 0x10, /*!< authenticate a card */
     FELICA_CMD_AUTHENTICATION2 =
-        0x12,               /*!< allow a card to authenticate a Reader/Writer               */
+        0x12, /*!< allow a card to authenticate a Reader/Writer               */
     FELICA_CMD_READ = 0x14, /*!< read Block Data from a Service that requires
                                authentication    */
     FELICA_CMD_WRITE =
@@ -328,12 +328,10 @@ typedef union { /*  PRQA S 0750 # MISRA 19.2 - Both members are of the same
                               + dSFGT = 5.4s)                   */
 #define RFAL_ST25R3916_GT_MIN_1FC                                              \
     rfalConvMsTo1fc(                                                           \
-        RFAL_ST25R3916_SW_TMR_MIN_1MS) /*!< Min GT value allowed in 1/fc */
-#define RFAL_ST25R3916_SW_TMR_MIN_1MS                                          \
-    1U /*!< Min value of a SW timer in ms */
+        RFAL_ST25R3916_SW_TMR_MIN_1MS)   /*!< Min GT value allowed in 1/fc */
+#define RFAL_ST25R3916_SW_TMR_MIN_1MS 1U /*!< Min value of a SW timer in ms */
 
-#define RFAL_OBSMODE_DISABLE                                                   \
-    0x00U /*!< Observation Mode disabled */
+#define RFAL_OBSMODE_DISABLE 0x00U /*!< Observation Mode disabled */
 
 #define RFAL_RX_INC_BYTE_LEN                                                   \
     (uint8_t)1U /*!< Threshold where incoming rx shall be considered           \
@@ -375,7 +373,8 @@ typedef union { /*  PRQA S 0750 # MISRA 19.2 - Both members are of the same
     4U /*!< ISO15693 Inventory response duration @ 26 kbps (ms) */
 
 #define RFAL_WU_MIN_WEIGHT_VAL                                                 \
-    4U /*!< ST25R3916 minimum Wake-up weight value */
+    4U /*!< ST25R3916 minimum Wake-up weight value                             \
+        */
 
 /*******************************************************************************/
 
@@ -389,7 +388,7 @@ typedef union { /*  PRQA S 0750 # MISRA 19.2 - Both members are of the same
     64U /*!< MRT jitter adjustment: timeout will be between [ tout ; tout + 64 \
            cycles ]      */
 #define RFAL_AP2P_FIELDOFF_TCMDOFF                                             \
-    1356U /*!< Time after TXE and Field Off t,CMD,OFF Activity 2.1  3.2.1.3 &                                                       \
+    1356U /*!< Time after TXE and Field Off t,CMD,OFF Activity 2.1  3.2.1.3 &  \
              C            */
 
 #ifndef RFAL_ST25R3916_AAT_SETTLE

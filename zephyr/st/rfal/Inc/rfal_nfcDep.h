@@ -90,8 +90,7 @@
 
 #define RFAL_NFCDEP_FS_VAL_MIN                                                 \
     64U /*!< Minimum LR value                                               */
-#define RFAL_NFCDEP_LR_VAL_MASK                                                \
-    0x03U /*!< Bit mask for a LR value */
+#define RFAL_NFCDEP_LR_VAL_MASK 0x03U /*!< Bit mask for a LR value */
 #define RFAL_NFCDEP_PP_LR_MASK                                                 \
     0x30U /*!< Bit mask for LR value in PP byte on a ATR REQ/RES */
 #define RFAL_NFCDEP_PP_LR_SHIFT                                                \
@@ -99,22 +98,17 @@
 
 #define RFAL_NFCDEP_DID_MAX                                                    \
     14U /*!< Max DID value Digital 14.6.2.3                                 */
-#define RFAL_NFCDEP_DID_KEEP                                                   \
-    0xFFU /*!< Keep DID value already configured */
-#define RFAL_NFCDEP_DID_NO                                                     \
-    0x00U /*!< No DID shall be used */
-#define RFAL_NFCDEP_NAD_NO                                                     \
-    0x00U /*!< No NAD shall be used */
+#define RFAL_NFCDEP_DID_KEEP 0xFFU /*!< Keep DID value already configured */
+#define RFAL_NFCDEP_DID_NO   0x00U /*!< No DID shall be used */
+#define RFAL_NFCDEP_NAD_NO   0x00U /*!< No NAD shall be used */
 
 #define RFAL_NFCDEP_OPER_RTOX_REQ_DIS                                          \
     0x01U /*!< Operation config: RTOX REQ disable */
 #define RFAL_NFCDEP_OPER_RTOX_REQ_EN                                           \
     0x00U /*!< Operation config: RTOX REQ enable */
 
-#define RFAL_NFCDEP_OPER_ATN_DIS                                               \
-    0x00U /*!< Operation config: ATN disable */
-#define RFAL_NFCDEP_OPER_ATN_EN                                                \
-    0x02U /*!< Operation config: ATN enable */
+#define RFAL_NFCDEP_OPER_ATN_DIS 0x00U /*!< Operation config: ATN disable */
+#define RFAL_NFCDEP_OPER_ATN_EN  0x02U /*!< Operation config: ATN enable */
 
 #define RFAL_NFCDEP_OPER_EMPTY_DEP_DIS                                         \
     0x04U /*!< Operation config: empty DEPs disable */
@@ -146,8 +140,7 @@
 
 #define RFAL_NFCDEP_LEN_MIN                                                    \
     3U /*!< Minimum length byte LEN value                                  */
-#define RFAL_NFCDEP_LEN_MAX                                                    \
-    255U /*!< Maximum length byte LEN value */
+#define RFAL_NFCDEP_LEN_MAX 255U /*!< Maximum length byte LEN value */
 
 #define RFAL_NFCDEP_ATRRES_HEADER_LEN                                          \
     2U /*!< ATR RES Header Len:  CmdType: 0xD5 + Cod: 0x01                 */
@@ -193,8 +186,7 @@
  * (1048576 / 64)/fc = (100000h*64)/fc         */
 #define RFAL_NFCDEP_MAX_FWT ((uint32_t)1U << 20)
 
-#define RFAL_NFCDEP_WT_MASK                                                    \
-    0x0FU /*!< Bit mask for the Wait Time value */
+#define RFAL_NFCDEP_WT_MASK 0x0FU /*!< Bit mask for the Wait Time value */
 
 #define RFAL_NFCDEP_BR_MASK_106                                                \
     0x01U /*!< Enable mask bit rate 106                                    */
@@ -325,7 +317,7 @@ typedef struct {
     uint8_t nfcidLen; /*!< Length of the given NFCID in nfcid */
     uint8_t gb[RFAL_NFCDEP_GB_MAX_LEN]; /*!< Pointer General Bytes (GB) to be
                                            used */
-    uint8_t gbLen;                      /*!< Length of the given GB in gb                      */
+    uint8_t gbLen; /*!< Length of the given GB in gb                      */
     uint8_t lr; /*!< Length Reduction (LR) to be used                        */
     uint8_t to; /*!< Timeout (TO)  to be used                                */
     uint32_t fwt;  /*!< Frame Waiting Time (FWT) to be used  */

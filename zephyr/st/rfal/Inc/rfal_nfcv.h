@@ -87,7 +87,7 @@ enum {
     RFAL_NFCV_ERROR_CMD_NOT_RECOGNIZED =
         0x02U, /*!< The command is not recognised, format error occurred */
     RFAL_NFCV_ERROR_OPTION_NOT_SUPPORTED =
-        0x03U,                       /*!< The option is not supported                       */
+        0x03U, /*!< The option is not supported                       */
     RFAL_NFCV_ERROR_UNKNOWN = 0x0FU, /*!< Unknown error */
     RFAL_NFCV_ERROR_BLOCK_NOT_AVALIABLE =
         0x10U, /*!< The specified block is not available */
@@ -110,10 +110,10 @@ enum {
     RFAL_NFCV_CMD_READ_MULTIPLE_BLOCKS =
         0x23U, /*!< Read multiple blocks command */
     RFAL_NFCV_CMD_WRITE_MULTIPLE_BLOCKS =
-        0x24U,                            /*!< Write multiple blocks command                            */
+        0x24U, /*!< Write multiple blocks command                            */
     RFAL_NFCV_CMD_SELECT = 0x25U,         /*!< Select command         */
     RFAL_NFCV_CMD_RESET_TO_READY = 0x26U, /*!< Reset To Ready command */
-    RFAL_NFCV_CMD_GET_SYS_INFO = 0x2BU,   /*!< Get System Information command   */
+    RFAL_NFCV_CMD_GET_SYS_INFO = 0x2BU, /*!< Get System Information command   */
     RFAL_NFCV_CMD_EXTENDED_READ_SINGLE_BLOCK =
         0x30U, /*!< Extended read single block command */
     RFAL_NFCV_CMD_EXTENDED_WRITE_SINGLE_BLOCK =
@@ -132,7 +132,7 @@ enum {
 enum {
     RFAL_NFCV_CMD_READ_CONFIGURATION = 0xA0U, /*!< Read configuration command */
     RFAL_NFCV_CMD_WRITE_CONFIGURATION =
-        0xA1U,                              /*!< Write configuration command                              */
+        0xA1U, /*!< Write configuration command                              */
     RFAL_NFCV_CMD_SET_EAS = 0xA2U,          /*!< Set EAS command          */
     RFAL_NFCV_CMD_RESET_EAS = 0xA3U,        /*!< Reset EAS command        */
     RFAL_NFCV_CMD_LOCK_EAS = 0xA4U,         /*!< Lock EAS command         */
@@ -143,7 +143,7 @@ enum {
     RFAL_NFCV_CMD_MANAGE_GPO = 0xA9U,       /*!< Manage GPO command       */
     RFAL_NFCV_CMD_WRITE_MESSAGE = 0xAAU,    /*!< Write Message command    */
     RFAL_NFCV_CMD_READ_MESSAGE_LENGTH =
-        0xABU,                          /*!< Read Message Length command                          */
+        0xABU, /*!< Read Message Length command                          */
     RFAL_NFCV_CMD_READ_MESSAGE = 0xACU, /*!< Read Message command */
     RFAL_NFCV_CMD_READ_DYN_CONFIGURATION =
         0xADU, /*!< Read Dynamic Configuration command */
@@ -164,7 +164,7 @@ enum {
         0xC5U, /*!< Fast Extended Read multiple blocks command */
     RFAL_NFCV_CMD_FAST_WRITE_MESSAGE = 0xCAU, /*!< Fast Write Message */
     RFAL_NFCV_CMD_FAST_READ_MESSAGE_LENGTH =
-        0xCBU,                               /*!< Fast Read Message Length                               */
+        0xCBU, /*!< Fast Read Message Length                               */
     RFAL_NFCV_CMD_FAST_READ_MESSAGE = 0xCCU, /*!< Fast Read Message */
     RFAL_NFCV_CMD_FAST_READ_DYN_CONFIGURATION =
         0xCDU, /*!< Fast Read Dynamic configuration */

@@ -92,8 +92,8 @@ typedef struct {
     uint16_t techDctCnt; /* Technologies detection counter (before WU)      */
     rfalBitRate ap2pBR;  /* Bit rate to poll for AP2P                       */
     uint8_t selDevIdx;   /* Selected device index                           */
-    rfalNfcDevice *activeDev;                    /* Active device pointer                    */
-    rfalNfcDiscoverParam disc;                   /* Discovery parameters                   */
+    rfalNfcDevice *activeDev;  /* Active device pointer                    */
+    rfalNfcDiscoverParam disc; /* Discovery parameters                   */
     rfalNfcDevice devList[RFAL_NFC_MAX_DEVICES]; /*!< Location of device list */
     uint8_t devCnt;       /* Decices found counter                           */
     uint32_t discTmr;     /* Discovery Total duration timer                  */
@@ -530,7 +530,7 @@ rfalNfcWorker(void)
             {
                 gNfcDev.state =
                     RFAL_NFC_STATE_DATAEXCHANGE_DONE; /* Go to done state */
-                rfalNfcNfcNotify(gNfcDev.state);      /* And notify caller      */
+                rfalNfcNfcNotify(gNfcDev.state); /* And notify caller      */
             }
             if (gNfcDev.dataExErr ==
                 ERR_SLEEP_REQ) /* Check if Listen mode has to go to Sleep */

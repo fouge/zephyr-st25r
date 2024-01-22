@@ -58,7 +58,8 @@
     0x10U /*!< HR0 indicating NDEF support  Digital 2.0 (Candidate) 11.6.2.1   \
            */
 #define RFAL_T1T_RID_RES_HR0_MASK                                              \
-    0xF0U /*!< HR0 most significant nibble mask */
+    0xF0U /*!< HR0 most significant nibble mask                                \
+           */
 
 /*
 ******************************************************************************

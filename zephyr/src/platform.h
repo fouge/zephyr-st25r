@@ -216,7 +216,7 @@ platform_st25r_unprotect_comm();
     gpio_pin_toggle(port, pin) /*!< Toogles the given GPIO */
 
 #ifdef CONFIG_ST25R_TRIGGER_NONE
-    #define platformGpioIsHigh(port, pin)                                          \
+#define platformGpioIsHigh(port, pin)                                          \
     false /*!< Checks if the given pin is High */
 #else
 #define platformGpioIsHigh(port, pin)                                          \

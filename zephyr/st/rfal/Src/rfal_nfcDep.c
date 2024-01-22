@@ -93,8 +93,7 @@
     (MAX(NFCIP_RLSRES_MAX_LEN,                                                 \
          NFCIP_DSLRES_MAX_LEN)) /*!< Max target control res length    */
 
-#define NFCIP_NO_FWT                                                           \
-    RFAL_FWT_NONE /*!< No FWT value - Target Mode */
+#define NFCIP_NO_FWT RFAL_FWT_NONE /*!< No FWT value - Target Mode */
 #define NFCIP_INIT_MIN_RTOX                                                    \
     1U /*!< Minimum RTOX value  Digital 1.0  14.8.4.1             */
 #define NFCIP_INIT_MAX_RTOX                                                    \
@@ -154,10 +153,8 @@
     4U /*!< Minimum frame length with error to be ignored                      \
           Digital 1.0 14.12.5.4 */
 
-#define NFCIP_REQ                                                              \
-    (uint8_t)0xD4U /*!<NFCIP REQuest code */
-#define NFCIP_RES                                                              \
-    (uint8_t)0xD5U /*!<NFCIP RESponce code */
+#define NFCIP_REQ (uint8_t)0xD4U /*!<NFCIP REQuest code */
+#define NFCIP_RES (uint8_t)0xD5U /*!<NFCIP RESponce code */
 
 #define NFCIP_BS_MASK                                                          \
     0x0FU /*!< Bit mask for BS value on a ATR REQ/RES                */
@@ -2438,17 +2435,17 @@ rfalNfcDepInitiatorHandleActivation(rfalNfcDepAtrParam *param,
     /*******************************************************************************/
     /* Check Frame Size                                                            */
     /*******************************************************************************/
-    if( gNfcip.cfg.lr < nfcDepDev->info.LR )  /* If our Length reduction is smaller */   
+    if( gNfcip.cfg.lr < nfcDepDev->info.LR )  /* If our Length reduction is smaller */
     {
         sendPSL = true;
-        
+
         nfcDepDev->info.LR   = MIN( nfcDepDev->info.LR, gNfcip.cfg.lr );
-        
+
         gNfcip.cfg.lr = nfcDepDev->info.LR;                /* Update nfcip LR  to be used */
-        gNfcip.fsc    = rfalNfcDepLR2FS( gNfcip.cfg.lr );  /* Update nfcip FSC to be used */     
-        
+        gNfcip.fsc    = rfalNfcDepLR2FS( gNfcip.cfg.lr );  /* Update nfcip FSC to be used */
+
         PSL_FSL       = gNfcip.cfg.lr;                     /* Set LR to be sent           */
-        
+
         nfcipLogI( " NFCIP(I) Frame Size differ, PSL new fsc: %d \r\n", gNfcip.fsc );
     }
 #endif

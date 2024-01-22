@@ -49,36 +49,29 @@
  ******************************************************************************
  */
 
-#define RFAL_ST25xV_READ_CONFIG_LEN                                            \
-    2U /*!< READ CONFIGURATION length */
-#define RFAL_ST25xV_READ_MSG_LEN_LEN                                           \
-    2U /*!< READ MESSAGE LENGTH length */
+#define RFAL_ST25xV_READ_CONFIG_LEN  2U /*!< READ CONFIGURATION length */
+#define RFAL_ST25xV_READ_MSG_LEN_LEN 2U /*!< READ MESSAGE LENGTH length */
 #define RFAL_ST25xV_CONF_POINTER_LEN                                           \
     1U /*!< READ/WRITE CONFIGURATION Pointer length */
 #define RFAL_ST25xV_CONF_REGISTER_LEN                                          \
     1U /*!< READ/WRITE CONFIGURATION Register length */
-#define RFAL_ST25xV_PWDNUM_LEN                                                 \
-    1U /*!< Password Number length */
-#define RFAL_ST25xV_PWD_LEN                                                    \
-    8U /*!< Password length */
-#define RFAL_ST25xV_MBPOINTER_LEN                                              \
-    1U /*!< Read Message MBPointer length */
+#define RFAL_ST25xV_PWDNUM_LEN    1U /*!< Password Number length */
+#define RFAL_ST25xV_PWD_LEN       8U /*!< Password length */
+#define RFAL_ST25xV_MBPOINTER_LEN 1U /*!< Read Message MBPointer length */
 #define RFAL_ST25xV_NUMBYTES_LEN                                               \
-    1U /*!< Read Message Number of Bytes length */
+    1U /*!< Read Message Number of Bytes length                                \
+        */
 
 #define RFAL_ST25TV02K_TBOOT_RF                                                \
     1U /*!< RF Boot time (Minimum time from carrier generation to first data)  \
         */
-#define RFAL_ST25TV02K_TRF_OFF                                                 \
-    2U /*!< RF OFF time */
+#define RFAL_ST25TV02K_TRF_OFF 2U /*!< RF OFF time */
 
 #define RFAL_ST25xV_FDT_POLL_MAX                                               \
     rfalConvMsTo1fc(                                                           \
         20) /*!< Maximum Wait time FDTV,EOF 20 ms    Digital 2.1  B.5 */
-#define RFAL_NFCV_FLAG_POS                                                     \
-    0U /*!< Flag byte position */
-#define RFAL_NFCV_FLAG_LEN                                                     \
-    1U /*!< Flag byte length */
+#define RFAL_NFCV_FLAG_POS 0U /*!< Flag byte position */
+#define RFAL_NFCV_FLAG_LEN 1U /*!< Flag byte length */
 
 /*
 ******************************************************************************

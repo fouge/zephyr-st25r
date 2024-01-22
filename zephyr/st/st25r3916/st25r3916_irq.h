@@ -93,8 +93,8 @@
 #define ST25R3916_IRQ_MASK_WT                                                  \
     (uint32_t)(0x00080000U) /*!< ST25R3916 wake-up interrupt */
 #define ST25R3916_IRQ_MASK_WAM                                                 \
-    (uint32_t)(                                                                \
-        0x00040000U) /*!< ST25R3916 wake-up due to amplitude interrupt */
+    (uint32_t)(0x00040000U) /*!< ST25R3916 wake-up due to amplitude interrupt  \
+                             */
 #define ST25R3916_IRQ_MASK_WPH                                                 \
     (uint32_t)(0x00020000U) /*!< ST25R3916 wake-up due to phase interrupt */
 #if defined(ST25R3916)

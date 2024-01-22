@@ -54,25 +54,18 @@
 #define RFAL_NFCV_MASKVAL_MAX_16SLOT_LEN                                       \
     60U /*!< Mask value max length in 16 Slot mode in bits Digital 2.1 9.6.1.6 \
          */
-#define RFAL_NFCV_MAX_SLOTS                                                    \
-    16U /*!< NFC-V max number of Slots */
+#define RFAL_NFCV_MAX_SLOTS 16U /*!< NFC-V max number of Slots */
 #define RFAL_NFCV_INV_REQ_HEADER_LEN                                           \
     3U /*!< INVENTORY_REQ header length (INV_FLAG, CMD, MASK_LEN) */
-#define RFAL_NFCV_INV_RES_LEN                                                  \
-    10U /*!< INVENTORY_RES length */
+#define RFAL_NFCV_INV_RES_LEN 10U /*!< INVENTORY_RES length */
 #define RFAL_NFCV_WR_MUL_REQ_HEADER_LEN                                        \
     4U /*!< Write Multiple header length (INV_FLAG, CMD, [UID], BNo, Bno) */
 
-#define RFAL_NFCV_CMD_LEN                                                      \
-    1U /*!< Commandbyte length */
-#define RFAL_NFCV_FLAG_POS                                                     \
-    0U /*!< Flag byte position */
-#define RFAL_NFCV_FLAG_LEN                                                     \
-    1U /*!< Flag byte length */
-#define RFAL_NFCV_DATASTART_POS                                                \
-    1U /*!< Position of start of data */
-#define RFAL_NFCV_DSFI_LEN                                                     \
-    1U /*!< DSFID length */
+#define RFAL_NFCV_CMD_LEN       1U /*!< Commandbyte length */
+#define RFAL_NFCV_FLAG_POS      0U /*!< Flag byte position */
+#define RFAL_NFCV_FLAG_LEN      1U /*!< Flag byte length */
+#define RFAL_NFCV_DATASTART_POS 1U /*!< Position of start of data */
+#define RFAL_NFCV_DSFI_LEN      1U /*!< DSFID length */
 #define RFAL_NFCV_SLPREQ_REQ_FLAG                                              \
     0x22U /*!< SLPV_REQ request flags Digital 2.0 (Candidate) 9.7.1.1 */
 #define RFAL_NFCV_RES_FLAG_NOERROR                                             \

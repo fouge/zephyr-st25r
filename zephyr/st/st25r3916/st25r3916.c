@@ -49,8 +49,7 @@ LOG_MODULE_REGISTER(st25r3916, CONFIG_ST25R_LOG_LEVEL);
 
 #define ST25R3916_SUPPLY_THRESHOLD                                             \
     3600U /*!< Power supply measure threshold between 3.3V or 5V */
-#define ST25R3916_NRT_MAX                                                      \
-    0xFFFFU /*!< Max Register value of NRT */
+#define ST25R3916_NRT_MAX 0xFFFFU /*!< Max Register value of NRT */
 
 #define ST25R3916_TOUT_MEASURE_VDD                                             \
     100U /*!< Max duration time of Measure Power Supply command  Datasheet:    \
@@ -80,10 +79,8 @@ LOG_MODULE_REGISTER(st25r3916, CONFIG_ST25R_LOG_LEVEL);
     0x33U /*!< Register Read Write test pattern used during selftest */
 #define ST25R3916_TEST_WU_TOUT                                                 \
     12U /*!< Timeout used on WU timer during self test */
-#define ST25R3916_TEST_TMR_TOUT                                                \
-    20U /*!< Timeout used during self test */
-#define ST25R3916_TEST_TMR_TOUT_DELTA                                          \
-    2U /*!< Timeout used during self test */
+#define ST25R3916_TEST_TMR_TOUT       20U /*!< Timeout used during self test */
+#define ST25R3916_TEST_TMR_TOUT_DELTA 2U  /*!< Timeout used during self test */
 #define ST25R3916_TEST_TMR_TOUT_8FC                                            \
     (ST25R3916_TEST_TMR_TOUT * 1695U) /*!< Timeout in 8/fc */
 

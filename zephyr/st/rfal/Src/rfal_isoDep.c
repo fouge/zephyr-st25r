@@ -97,14 +97,15 @@
 #define ISODEP_PCB_SB_VALID_VAL                                                \
     (ISODEP_PCB_B2_BIT) /*!< Value for the MUST bits on I-Block       */
 
-#define ISODEP_PCB_B1_BIT                                                      \
-    (0x01U) /*!< Bit mask for the RFU S Blocks */
+#define ISODEP_PCB_B1_BIT (0x01U) /*!< Bit mask for the RFU S Blocks */
 #define ISODEP_PCB_B2_BIT                                                      \
     (0x02U) /*!< Bit mask for the RFU bit2 in I,S,R Blocks */
 #define ISODEP_PCB_B3_BIT                                                      \
-    (0x04U) /*!< Bit mask for the RFU bit3 in R Blocks */
+    (0x04U) /*!< Bit mask for the RFU bit3 in R Blocks                         \
+             */
 #define ISODEP_PCB_B6_BIT                                                      \
-    (0x20U) /*!< Bit mask for the RFU bit2 in R Blocks */
+    (0x20U) /*!< Bit mask for the RFU bit2 in R Blocks                         \
+             */
 #define ISODEP_PCB_CHAINING_BIT                                                \
     (0x10U) /*!< Bit mask for the chaining bit of an ISO DEP I-Block in PCB.   \
              */
@@ -187,11 +188,13 @@
 #define ISODEP_FWI_MIN_10                                                      \
     (1U) /*!< Minimum value for FWI Digital 1.0 11.6.2.17 */
 #define ISODEP_FWI_MIN_11                                                      \
-    (0U)                     /*!< Default value for FWI Digital 1.1 13.6.2    */
-#define ISODEP_FWI_MAX (14U) /*!< Maximum value for FWI Digital 1.0 11.6.2.17  \
-                              */
-#define ISODEP_SFGI_MIN (0U) /*!< Default value for FWI Digital 1.1 13.6.2.22  \
-                              */
+    (0U) /*!< Default value for FWI Digital 1.1 13.6.2    */
+#define ISODEP_FWI_MAX                                                         \
+    (14U) /*!< Maximum value for FWI Digital 1.0 11.6.2.17                     \
+           */
+#define ISODEP_SFGI_MIN                                                        \
+    (0U) /*!< Default value for FWI Digital 1.1 13.6.2.22                      \
+          */
 #define ISODEP_SFGI_MAX                                                        \
     (14U) /*!< Maximum value for FWI Digital 1.1 13.6.2.22 */
 
@@ -2781,25 +2784,26 @@ rfalIsoDepPollBStartActivation(rfalIsoDepFSxI FSDI, uint8_t DID,
 
     /***************************************************************************/
     /* Send ATTRIB Command */
-    EXIT_ON_ERR(ret,
-                rfalIsoDepStartATTRIB(
-                    (const uint8_t *)&nfcbDev->sensbRes.nfcid0,
-                    (((nfcbDev->sensbRes.protInfo.FwiAdcFo &
-                       RFAL_NFCB_SENSB_RES_ADC_ADV_FEATURE_MASK) != 0U)
-                         ? PARAM1
-                         : RFAL_ISODEP_ATTRIB_REQ_PARAM1_DEFAULT),
-                    rfalIsoDepDev->info.DSI, rfalIsoDepDev->info.DRI, FSDI,
-                    (gIsoDep.compMode == RFAL_COMPLIANCE_MODE_EMV)
-                        ? RFAL_NFCB_SENSB_RES_PROTO_ISO_MASK
-                        : (nfcbDev->sensbRes.protInfo.FsciProType &
-                           ((RFAL_NFCB_SENSB_RES_PROTO_TR2_MASK
-                             << RFAL_NFCB_SENSB_RES_PROTO_TR2_SHIFT) |
-                            RFAL_NFCB_SENSB_RES_PROTO_ISO_MASK)), /* EMVCo 2.6 6.4.1.9
-                                                                   */
-                    DID, HLInfo, HLInfoLen,
-                    (rfalIsoDepDev->info.FWT + rfalIsoDepDev->info.dFWT),
-                    &rfalIsoDepDev->activation.B.Listener.ATTRIB_RES,
-                    &rfalIsoDepDev->activation.B.Listener.ATTRIB_RESLen));
+    EXIT_ON_ERR(
+        ret,
+        rfalIsoDepStartATTRIB(
+            (const uint8_t *)&nfcbDev->sensbRes.nfcid0,
+            (((nfcbDev->sensbRes.protInfo.FwiAdcFo &
+               RFAL_NFCB_SENSB_RES_ADC_ADV_FEATURE_MASK) != 0U)
+                 ? PARAM1
+                 : RFAL_ISODEP_ATTRIB_REQ_PARAM1_DEFAULT),
+            rfalIsoDepDev->info.DSI, rfalIsoDepDev->info.DRI, FSDI,
+            (gIsoDep.compMode == RFAL_COMPLIANCE_MODE_EMV)
+                ? RFAL_NFCB_SENSB_RES_PROTO_ISO_MASK
+                : (nfcbDev->sensbRes.protInfo.FsciProType &
+                   ((RFAL_NFCB_SENSB_RES_PROTO_TR2_MASK
+                     << RFAL_NFCB_SENSB_RES_PROTO_TR2_SHIFT) |
+                    RFAL_NFCB_SENSB_RES_PROTO_ISO_MASK)), /* EMVCo 2.6 6.4.1.9
+                                                           */
+            DID, HLInfo, HLInfoLen,
+            (rfalIsoDepDev->info.FWT + rfalIsoDepDev->info.dFWT),
+            &rfalIsoDepDev->activation.B.Listener.ATTRIB_RES,
+            &rfalIsoDepDev->activation.B.Listener.ATTRIB_RESLen));
 
     gIsoDep.actvDev = rfalIsoDepDev;
     return ret;
