@@ -52,17 +52,13 @@
 #define RFAL_FDT_POLL_SL_MAX                                                   \
     rfalConvMsTo1fc(1U) /*!< Maximum Wait time for Sector Select as defined in \
                            TS T2T 1.0 table 18  */
-#define RFAL_T2T_ACK_NACK_LEN                                                  \
-    1U /*!< Len of NACK in bytes (4 bits) */
-#define RFAL_T2T_ACK                                                           \
-    0x0AU /*!< ACK value */
-#define RFAL_T2T_ACK_MASK                                                      \
-    0x0FU /*!< ACK value */
+#define RFAL_T2T_ACK_NACK_LEN 1U    /*!< Len of NACK in bytes (4 bits) */
+#define RFAL_T2T_ACK          0x0AU /*!< ACK value */
+#define RFAL_T2T_ACK_MASK     0x0FU /*!< ACK value */
 
 #define RFAL_T2T_SECTOR_SELECT_P1_BYTE2                                        \
     0xFFU /*!< Sector Select Packet 1 byte 2 */
-#define RFAL_T2T_SECTOR_SELECT_P2_RFU_LEN                                      \
-    3U /*!< Sector Select RFU length */
+#define RFAL_T2T_SECTOR_SELECT_P2_RFU_LEN 3U /*!< Sector Select RFU length */
 
 /*
  ******************************************************************************

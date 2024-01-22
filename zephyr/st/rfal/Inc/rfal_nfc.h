@@ -219,7 +219,7 @@ typedef struct {
 typedef struct {
     rfalComplianceMode compMode; /*!< Compliancy mode to be used */
     uint16_t techs2Find;         /*!< Technologies to search for         */
-    uint16_t techs2Bail;         /*!< Bail-out after certain NFC technologies         */
+    uint16_t techs2Bail; /*!< Bail-out after certain NFC technologies         */
     uint16_t totalDuration; /*!< Duration of a whole Poll + Listen cycle NCI 2.1
                                Table 46    */
     uint8_t devLimit;  /*!< Max number of devices  Activity 2.1  Table 11  */
@@ -247,8 +247,8 @@ typedef struct {
 
     void (*notifyCb)(rfalNfcState st); /*!< Callback to Notify upper layer */
 
-    bool wakeupEnabled;            /*!< Enable Wake-Up mode before polling            */
-    bool wakeupConfigDefault;      /*!< Wake-Up mode default configuration      */
+    bool wakeupEnabled; /*!< Enable Wake-Up mode before polling            */
+    bool wakeupConfigDefault; /*!< Wake-Up mode default configuration      */
     rfalWakeUpConfig wakeupConfig; /*!< Wake-Up mode configuration */
     uint16_t
         wakeupNPolls; /*!< Number of polling cycles before entering Wake-up */

@@ -306,7 +306,8 @@
 #define rfalLogW(...)                                                          \
     LOG_WRN(__VA_ARGS__) /*!< Macro for the warning log method */
 #define rfalLogI(...)                                                          \
-    LOG_INF(__VA_ARGS__) /*!< Macro for the info log method */
+    LOG_INF(__VA_ARGS__) /*!< Macro for the info log method                    \
+                          */
 #define rfalLogD(...)                                                          \
     LOG_DBG(__VA_ARGS__) /*!< Macro for the debug log method */
 
@@ -325,10 +326,8 @@
     rfalConvMsTo1fc(20U) /*!< GTF  Digital 2.0  8.7.4.1  & B.4 */
 #define RFAL_GT_NFCV                                                           \
     rfalConvMsTo1fc(5U) /*!< GTV  Digital 2.0  9.7.5.1  & B.5 */
-#define RFAL_GT_PICOPASS                                                       \
-    rfalConvMsTo1fc(1U) /*!< GT Picopass */
-#define RFAL_GT_AP2P                                                           \
-    rfalConvMsTo1fc(5U) /*!< TIRFG  Ecma 340  11.1.1 */
+#define RFAL_GT_PICOPASS rfalConvMsTo1fc(1U) /*!< GT Picopass */
+#define RFAL_GT_AP2P     rfalConvMsTo1fc(5U) /*!< TIRFG  Ecma 340  11.1.1 */
 #define RFAL_GT_AP2P_ADJUSTED                                                  \
     rfalConvMsTo1fc(5U + 25U) /*!< Adjusted GT for greater interoperability    \
                                  (Sony XPERIA P, Nokia N9, Huawei P2) */
@@ -373,8 +372,7 @@
     6800U /*!< FDTF,POLL,MIN   Digital 2.1  8.7.3 & B.4 */
 #define RFAL_FDT_POLL_NFCV_POLLER                                              \
     4192U /*!< FDTV,POLL  Digital 2.1  9.7.3.1  & B.5 */
-#define RFAL_FDT_POLL_PICOPASS_POLLER                                          \
-    1790U /*!< FDT Max */
+#define RFAL_FDT_POLL_PICOPASS_POLLER 1790U /*!< FDT Max */
 #define RFAL_FDT_POLL_AP2P_POLLER                                              \
     6800U /*!< AP2P inhere FDT from the Technology used (use longest:          \
              TR0F,POLL,MIN + TR1F)     Digital 2.2  17.11.1           */
@@ -524,7 +522,7 @@ enum {
         (0U << 6), /*!< Enable automatic adaption of flag byte (ISO115693)
                       according to current comm params   */
     RFAL_TXRX_FLAGS_CRC_RX_MANUAL =
-        (1U << 7),                           /*!< Disable automatic CRC check                           */
+        (1U << 7), /*!< Disable automatic CRC check                           */
     RFAL_TXRX_FLAGS_CRC_RX_AUTO = (0U << 7), /*!< Enable automatic CRC check */
 };
 
@@ -580,8 +578,7 @@ typedef enum {
 /*  FeliCa */
 /*******************************************************************************/
 
-#define RFAL_FELICA_LEN_LEN                                                    \
-    1U /*!< FeliCa LEN byte length */
+#define RFAL_FELICA_LEN_LEN 1U /*!< FeliCa LEN byte length */
 #define RFAL_FELICA_POLL_REQ_LEN                                               \
     (RFAL_FELICA_LEN_LEN + 1U + 2U + 1U +                                      \
      1U) /*!< FeliCa Poll Request length (LEN + CMD + SC + RC + TSN) */
@@ -671,7 +668,7 @@ typedef struct {
 
 /*! RFAL Listen Mode Passive F configs */
 typedef struct {
-    uint8_t SC[RFAL_LM_SENSF_SC_LEN];         /*!< System Code to listen for         */
+    uint8_t SC[RFAL_LM_SENSF_SC_LEN]; /*!< System Code to listen for         */
     uint8_t SENSF_RES[RFAL_LM_SENSF_RES_LEN]; /*!< SENSF_RES */
 } rfalLmConfPF;
 

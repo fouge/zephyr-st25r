@@ -849,7 +849,7 @@ const uint8_t rfalAnalogConfigDefaultSettings[] = {
                      ST25R3916_REG_CORR_CONF2, 0xFF, 0x00)
 
     /****** Default Analog Configuration for Poll NFC-A Anticolision setting
-       ******/
+     ******/
     ,
     MODE_ENTRY_1_REG(
         (RFAL_ANALOG_CONFIG_POLL | RFAL_ANALOG_CONFIG_TECH_NFCA |
@@ -1323,7 +1323,7 @@ const uint8_t rfalAnalogConfigDefaultSettings[] = {
                      ST25R3916_REG_CORR_CONF2, 0xFF, 0x00)
 
     /****** Default Analog Configuration for Poll NFC-A Anticolision setting
-       ******/
+     ******/
     ,
     MODE_ENTRY_1_REG(
         (RFAL_ANALOG_CONFIG_POLL | RFAL_ANALOG_CONFIG_TECH_NFCA |

@@ -121,11 +121,11 @@ typedef enum {
 /*! Colission Resolution context */
 typedef struct {
     rfalNfcfGreedyF greedyF;
-    uint8_t devLimit;                  /*!< Device limit to be used                  */
+    uint8_t devLimit; /*!< Device limit to be used                  */
     rfalComplianceMode compMode;       /*!< Compliancy mode to be used       */
     rfalNfcfListenDevice *nfcfDevList; /*!< Location of the device list */
-    uint8_t *devCnt;                   /*!< Location of the device counter                   */
-    bool collPending;                  /*!< Collision pending flag                  */
+    uint8_t *devCnt;  /*!< Location of the device counter                   */
+    bool collPending; /*!< Collision pending flag                  */
     bool nfcDepFound;
     rfalNfcFColResState
         state; /*!< Single Collision Resolution state (Single CR)           */

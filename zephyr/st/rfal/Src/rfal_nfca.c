@@ -68,8 +68,8 @@
 #define RFAL_NFCA_SEL_PAR_LEN                                                  \
     1U /*!< SEL_PAR length                                   */
 #define RFAL_NFCA_SEL_SELPAR                                                   \
-    rfalNfcaSelPar(7U,                                                         \
-                   0U) /*!< SEL_PAR on Select is always with 4 data/nfcid */
+    rfalNfcaSelPar(7U, 0U) /*!< SEL_PAR on Select is always with 4 data/nfcid  \
+                            */
 #define RFAL_NFCA_BCC_LEN                                                      \
     1U /*!< BCC length                                       */
 
@@ -140,16 +140,16 @@ typedef enum {
 typedef enum {
     RFAL_NFCA_CR_FULL_START,    /*!< Start Full Collision Resolution state    */
     RFAL_NFCA_CR_FULL_SLPCHECK, /*!< Sleep and Check for restart state */
-    RFAL_NFCA_CR_FULL_RESTART   /*!< Restart Full Collision Resolution state   */
+    RFAL_NFCA_CR_FULL_RESTART /*!< Restart Full Collision Resolution state   */
 } rfalNfcaFColResState;
 
 /*! Colission Resolution context */
 typedef struct {
-    uint8_t devLimit;                  /*!< Device limit to be used                  */
+    uint8_t devLimit; /*!< Device limit to be used                  */
     rfalComplianceMode compMode;       /*!< Compliancy mode to be used       */
     rfalNfcaListenDevice *nfcaDevList; /*!< Location of the device list */
-    uint8_t *devCnt;                   /*!< Location of the device counter                   */
-    bool collPending;                  /*!< Collision pending flag                  */
+    uint8_t *devCnt;  /*!< Location of the device counter                   */
+    bool collPending; /*!< Collision pending flag                  */
 
     bool *collPend; /*!< Location of collision pending flag (Single CR) */
     rfalNfcaSelReq selReq; /*!< SelReqused during anticollision (Single CR) */
@@ -165,8 +165,8 @@ typedef struct {
     uint8_t
         bytesTxRx; /*!< TxRx bytes used during anticollision loop (Single CR) */
     uint8_t
-        bitsTxRx;   /*!< TxRx bits used during anticollision loop (Single CR)   */
-    uint16_t rxLen; /*!< Local reception length */
+        bitsTxRx; /*!< TxRx bits used during anticollision loop (Single CR)   */
+    uint16_t rxLen;  /*!< Local reception length */
     uint32_t tmrFDT; /*!< FDT timer used between SED_REQs  (Single CR) */
     uint8_t
         retries; /*!< Retries to be performed upon a timeout error (Single CR)*/

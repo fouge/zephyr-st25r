@@ -6,4 +6,4 @@ description: ST25R driver on SPI bus
 
 compatible: "st,st25r"
 
-include: [ "spi-device.yaml", "st,st25r-common.yaml" ]
+include: ["spi-device.yaml", "st,st25r-common.yaml"]

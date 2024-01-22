@@ -80,16 +80,18 @@ typedef uint16_t ReturnCode; /*!< Standard Return Code type from function. */
 #define ERR_NOTUNIQUE                                                          \
     ((ReturnCode)23U) /*!< transponder not unique - more than one transponder  \
                          in field */
-#define ERR_NOTSUPP ((ReturnCode)24U) /*!< requested operation not supported   \
-                                       */
-#define ERR_WRITE ((ReturnCode)25U)   /*!< write error */
-#define ERR_FIFO  ((ReturnCode)26U)   /*!< fifo over or underflow error */
-#define ERR_PAR   ((ReturnCode)27U)   /*!< parity error */
-#define ERR_DONE  ((ReturnCode)28U)   /*!< transfer has already finished */
+#define ERR_NOTSUPP                                                            \
+    ((ReturnCode)24U)               /*!< requested operation not supported     \
+                                     */
+#define ERR_WRITE ((ReturnCode)25U) /*!< write error */
+#define ERR_FIFO  ((ReturnCode)26U) /*!< fifo over or underflow error */
+#define ERR_PAR   ((ReturnCode)27U) /*!< parity error */
+#define ERR_DONE  ((ReturnCode)28U) /*!< transfer has already finished */
 #define ERR_RF_COLLISION                                                       \
     ((ReturnCode)29U) /*!< collision error (Bit Collision or during RF         \
                          Collision avoidance ) */
-#define ERR_HW_OVERRUN ((ReturnCode)30U)  /*!< lost one or more received bytes \
+#define ERR_HW_OVERRUN                                                         \
+    ((ReturnCode)30U)                     /*!< lost one or more received bytes \
                                            */
 #define ERR_RELEASE_REQ ((ReturnCode)31U) /*!< device requested release */
 #define ERR_SLEEP_REQ   ((ReturnCode)32U) /*!< device requested sleep */
@@ -141,12 +143,14 @@ typedef uint16_t ReturnCode; /*!< Standard Return Code type from function. */
 #define ERR_INSERT_SIO_GRP(x) (ERR_SIO_GRP | (x)) /*!< Insert the SIO grp */
 #define ERR_INSERT_RINGBUF_GRP(x)                                              \
     (ERR_RINGBUF_GRP | (x)) /*!< Insert the Ring Buffer grp */
-#define ERR_INSERT_RFAL_GRP(x) (ERR_RFAL_GRP | (x)) /*!< Insert the RFAL grp   \
-                                                     */
-#define ERR_INSERT_SPI_GRP(x)  (ERR_SPI_GRP | (x))  /*!< Insert the spi grp */
-#define ERR_INSERT_I2C_GRP(x)  (ERR_I2C_GRP | (x))  /*!< Insert the i2c grp */
-#define ERR_INSERT_UART_GRP(x) (ERR_UART_GRP | (x)) /*!< Insert the uart grp   \
-                                                     */
+#define ERR_INSERT_RFAL_GRP(x)                                                 \
+    (ERR_RFAL_GRP | (x))                          /*!< Insert the RFAL grp     \
+                                                   */
+#define ERR_INSERT_SPI_GRP(x) (ERR_SPI_GRP | (x)) /*!< Insert the spi grp */
+#define ERR_INSERT_I2C_GRP(x) (ERR_I2C_GRP | (x)) /*!< Insert the i2c grp */
+#define ERR_INSERT_UART_GRP(x)                                                 \
+    (ERR_UART_GRP | (x)) /*!< Insert the uart grp                              \
+                          */
 #define ERR_INSERT_TIMER_GRP(x)                                                \
     (ERR_TIMER_GRP | (x))                       /*!< Insert the timer grp */
 #define ERR_INSERT_MQ_GRP(x) (ERR_MQ_GRP | (x)) /*!< Insert the mq grp */

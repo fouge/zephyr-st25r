@@ -58,29 +58,23 @@
 #define RFAL_ISODEP_PROLOGUE_SIZE                                              \
     (3U) /*!< Length of Prologue Field for I-Block Format */
 
-#define RFAL_ISODEP_PCB_LEN                                                    \
-    (1U) /*!< PCB length */
-#define RFAL_ISODEP_DID_LEN                                                    \
-    (1U) /*!< DID length */
-#define RFAL_ISODEP_NAD_LEN                                                    \
-    (1U) /*!< NAD length */
+#define RFAL_ISODEP_PCB_LEN (1U) /*!< PCB length */
+#define RFAL_ISODEP_DID_LEN (1U) /*!< DID length */
+#define RFAL_ISODEP_NAD_LEN (1U) /*!< NAD length */
 #define RFAL_ISODEP_NO_DID                                                     \
     (0x00U) /*!< DID value indicating the ISO-DEP layer not to use DID */
 #define RFAL_ISODEP_NO_NAD                                                     \
     (0xFFU) /*!< NAD value indicating the ISO-DEP layer not to use NAD */
 
-#define RFAL_ISODEP_FWI_MASK                                                   \
-    (0xF0U) /*!< Mask bits of FWI */
-#define RFAL_ISODEP_FWI_SHIFT                                                  \
-    (4U) /*!< Shift val of FWI */
+#define RFAL_ISODEP_FWI_MASK  (0xF0U) /*!< Mask bits of FWI */
+#define RFAL_ISODEP_FWI_SHIFT (4U)    /*!< Shift val of FWI */
 #define RFAL_ISODEP_FWI_DEFAULT                                                \
     (4U) /*!< Default value for FWI Digital 1.0 11.6.2.17 */
 #define RFAL_ISODEP_ADV_FEATURE                                                \
     (0x0FU) /*!< Indicate 256 Bytes FSD and Advanc Proto Feature support:NAD & \
                DID */
 
-#define RFAL_ISODEP_DID_MAX                                                    \
-    (14U) /*!< Maximum DID value */
+#define RFAL_ISODEP_DID_MAX (14U) /*!< Maximum DID value */
 
 #define RFAL_ISODEP_BRI_MASK                                                   \
     (0x07U) /*!< Mask bits for Poll to Listen Send bitrate */
@@ -89,8 +83,7 @@
 #define RFAL_ISODEP_SAME_BITRATE_MASK                                          \
     (0x80U) /*!< Mask bit indicate only same bit rate D for both direction     \
                support */
-#define RFAL_ISODEP_BITRATE_RFU_MASK                                           \
-    (0x08U) /*!< Mask bit for RFU */
+#define RFAL_ISODEP_BITRATE_RFU_MASK (0x08U) /*!< Mask bit for RFU */
 
 /*! Maximum Frame Waiting Time = ((256 * 16/fc) * 2^FWImax) = ((256*16/fc)*2^14)
  * = (67108864)/fc = 2^26 (1/fc)                  */
@@ -110,8 +103,7 @@
 #define RFAL_ISODEP_DEFAULT_FWI                                                \
     (8U) /*!< Default Listener FWI (Max)      Digital 2.0  B7 & B3 */
 
-#define RFAL_ISODEP_APDU_MAX_LEN                                               \
-    RFAL_ISODEP_FSX_1024 /*!< Max APDU length */
+#define RFAL_ISODEP_APDU_MAX_LEN RFAL_ISODEP_FSX_1024 /*!< Max APDU length */
 
 #define RFAL_ISODEP_ATTRIB_RES_MBLI_NO_INFO                                    \
     (0x00U) /*!< MBLI indicating no information on its internal input buffer   \
@@ -154,8 +146,7 @@
 #define RFAL_ISODEP_SPARAM_TAG_SEL_FRAME                                       \
     (0x85U) /*!< S(PARAMETERS) tag Selected framing options PICC to PCD */
 
-#define RFAL_ISODEP_SPARAM_TAG_LEN                                             \
-    (1) /*!< S(PARAMETERS) Tag Length */
+#define RFAL_ISODEP_SPARAM_TAG_LEN (1) /*!< S(PARAMETERS) Tag Length */
 #define RFAL_ISODEP_SPARAM_TAG_BRREQ_LEN                                       \
     (0U) /*!< S(PARAMETERS) tag Bit rates Request Length */
 #define RFAL_ISODEP_SPARAM_TAG_PICC2PCD_LEN                                    \
@@ -192,9 +183,9 @@
 #define RFAL_ISODEP_ATS_T0_TC_PRESENCE_MASK                                    \
     (0x40U) /*!< Mask bit for TC presence */
 #define RFAL_ISODEP_ATS_T0_FSCI_MASK                                           \
-    (0x0FU) /*!< Mask bit for FSCI presence */
-#define RFAL_ISODEP_ATS_T0_OFFSET                                              \
-    (0x01U) /*!< Offset of T0 in ATS Response */
+    (0x0FU)                               /*!< Mask bit for FSCI presence      \
+                                           */
+#define RFAL_ISODEP_ATS_T0_OFFSET (0x01U) /*!< Offset of T0 in ATS Response */
 
 #define RFAL_ISODEP_MAX_I_RETRYS                                               \
     (2U) /*!< Number of retries for a I-Block     Digital 2.0   16.2.5.4 */
@@ -393,7 +384,7 @@ typedef struct {
 /*! ISO-DEP Device structure */
 typedef struct {
     rfalIsoDepActivation activation; /*!< Activation Info */
-    rfalIsoDepInfo info;             /*!< ISO-DEP (ISO14443-4) device Info             */
+    rfalIsoDepInfo info; /*!< ISO-DEP (ISO14443-4) device Info             */
 } rfalIsoDepDevice;
 
 /*! ATTRIB Response parameters */
@@ -422,7 +413,7 @@ typedef struct {
 
 /*! Structure of APDU Buffer format from caller */
 typedef struct {
-    uint8_t prologue[RFAL_ISODEP_PROLOGUE_SIZE];     /*!< Prologue/SoD buffer     */
+    uint8_t prologue[RFAL_ISODEP_PROLOGUE_SIZE]; /*!< Prologue/SoD buffer     */
     uint8_t apdu[RFAL_FEATURE_ISO_DEP_APDU_MAX_LEN]; /*!< APDU/Payload buffer */
 } rfalIsoDepApduBufFormat;
 

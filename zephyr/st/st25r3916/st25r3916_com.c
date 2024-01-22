@@ -40,20 +40,21 @@ LOG_MODULE_REGISTER(st25r3916_com, CONFIG_ST25R_LOG_LEVEL);
 #define ST25R3916_OPTIMIZE                                                     \
     true /*!< Optimization switch: false always write value to register */
 #define ST25R3916_I2C_ADDR                                                     \
-    (0xA0U >> 1) /*!< ST25R3916's default I2C address */
+    (0xA0U >> 1) /*!< ST25R3916's default I2C address                          \
+                  */
 #define ST25R3916_REG_LEN                                                      \
     1U /*!< Byte length of a ST25R3916 register                            */
 
-#define ST25R3916_WRITE_MODE                                                   \
-    (0U << 6) /*!< ST25R3916 Operation Mode: Write */
-#define ST25R3916_READ_MODE                                                    \
-    (1U << 6) /*!< ST25R3916 Operation Mode: Read */
+#define ST25R3916_WRITE_MODE (0U << 6) /*!< ST25R3916 Operation Mode: Write */
+#define ST25R3916_READ_MODE  (1U << 6) /*!< ST25R3916 Operation Mode: Read */
 #define ST25R3916_CMD_MODE                                                     \
     (3U << 6) /*!< ST25R3916 Operation Mode: Direct Command */
 #define ST25R3916_FIFO_LOAD                                                    \
-    (0x80U) /*!< ST25R3916 Operation Mode: FIFO Load */
+    (0x80U) /*!< ST25R3916 Operation Mode: FIFO Load                           \
+             */
 #define ST25R3916_FIFO_READ                                                    \
-    (0x9FU) /*!< ST25R3916 Operation Mode: FIFO Read */
+    (0x9FU) /*!< ST25R3916 Operation Mode: FIFO Read                           \
+             */
 #define ST25R3916_PT_A_CONFIG_LOAD                                             \
     (0xA0U) /*!< ST25R3916 Operation Mode: Passive Target Memory A-Config Load \
              */
@@ -65,8 +66,7 @@ LOG_MODULE_REGISTER(st25r3916_com, CONFIG_ST25R_LOG_LEVEL);
 #define ST25R3916_PT_MEM_READ                                                  \
     (0xBFU) /*!< ST25R3916 Operation Mode: Passive Target Memory Read */
 
-#define ST25R3916_CMD_LEN                                                      \
-    (1U) /*!< ST25R3916 CMD length */
+#define ST25R3916_CMD_LEN (1U) /*!< ST25R3916 CMD length */
 #define ST25R3916_BUF_LEN                                                      \
     (ST25R3916_CMD_LEN + ST25R3916_FIFO_DEPTH) /*!< ST25R3916 communication    \
                                                   buffer: CMD + FIFO length */

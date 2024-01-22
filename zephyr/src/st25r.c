@@ -85,8 +85,10 @@ st25r_init(const struct device *dev)
     DEVICE_DT_INST_DEFINE(inst, st25r_init, NULL, &st25r_data_##inst,          \
                           &st25r_device_config_##inst, POST_KERNEL, 90, NULL);
 
-#if !DT_PROP_HAS_IDX(DT_DRV_INST(inst), irq_gpios, 0) && !defined(CONFIG_ST25R_TRIGGER_NONE)
-#error "No interrupt pin configured, make sure to set CONFIG_ST25R_TRIGGER_NONE=y or specify an interrupt pin"
+#if !DT_PROP_HAS_IDX(DT_DRV_INST(inst), irq_gpios, 0) &&                       \
+    !defined(CONFIG_ST25R_TRIGGER_NONE)
+#error                                                                         \
+    "No interrupt pin configured, make sure to set CONFIG_ST25R_TRIGGER_NONE=y or specify an interrupt pin"
 #endif
 
 DT_INST_FOREACH_STATUS_OKAY(ST25R_DEFINE)

@@ -271,7 +271,7 @@
 
 typedef uint8_t
     rfalAnalogConfigMode; /*!< Polling or Listening Mode of Configuration */
-typedef uint8_t rfalAnalogConfigTech;      /*!< Technology of Configuration      */
+typedef uint8_t rfalAnalogConfigTech; /*!< Technology of Configuration      */
 typedef uint8_t rfalAnalogConfigBitrate;   /*!< Bitrate of Configuration   */
 typedef uint8_t rfalAnalogConfigDirection; /*!< Transmit/Receive direction of
                                               Configuration                   */
@@ -299,13 +299,13 @@ typedef struct {
     uint8_t id[sizeof(rfalAnalogConfigId)]; /*!< Configuration ID */
     rfalAnalogConfigNum num; /*!< Number of Config Sets to follow    */
     rfalAnalogConfigRegAddrMaskVal regSet[];
-        /*!< Register-Mask-Value sets           */ /*  PRQA S 1060 # MISRA 18.7
-                                                      - Flexible Array Members
-                                                      are the only meaningful
-                                                      way of denoting a variable
-                                                      length input buffer which
-                                                      follows a fixed header
-                                                      structure. */
+    /*!< Register-Mask-Value sets           */ /*  PRQA S 1060 # MISRA 18.7
+                                                  - Flexible Array Members
+                                                  are the only meaningful
+                                                  way of denoting a variable
+                                                  length input buffer which
+                                                  follows a fixed header
+                                                  structure. */
 } rfalAnalogConfig;
 
 /*

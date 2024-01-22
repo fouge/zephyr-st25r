@@ -86,7 +86,7 @@ typedef struct {
     bool LeFlag; /*!< Le flag (append Le when true)                      */
 
     rfalIsoDepApduBufFormat *cApduBuf; /*!< Command-APDU buffer  (Tx) */
-    uint16_t *cApduLen;                /*!< Command-APDU Length                */
+    uint16_t *cApduLen; /*!< Command-APDU Length                */
 } rfalT4tCApduParam;
 
 /*! NFC-A T4T Response-APDU structure */
