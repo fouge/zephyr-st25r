@@ -6,5 +6,5 @@ properties:
   
   irq-gpios:
     type: phandle-array
-    required: true
+    required: false # poll interrupt registers if not specified
     description: IRQ pin (active high)
