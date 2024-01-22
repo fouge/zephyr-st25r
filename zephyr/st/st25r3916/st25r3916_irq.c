@@ -105,7 +105,7 @@ st25r3916CheckForReceivedInterrupts(void)
               ST25R3916_INT_REGS_LEN);
 
     /* In case the IRQ is Edge (not Level) triggered read IRQs until done */
-    while (platformGpioIsHigh(ST25R_INT_PORT, ST25R_INT_PIN)) {
+    do {
         st25r3916ReadMultipleRegisters(ST25R3916_REG_IRQ_MAIN, iregs,
                                        ST25R3916_INT_REGS_LEN);
 
@@ -113,7 +113,7 @@ st25r3916CheckForReceivedInterrupts(void)
         irqStatus |= (uint32_t)iregs[1] << 8;
         irqStatus |= (uint32_t)iregs[2] << 16;
         irqStatus |= (uint32_t)iregs[3] << 24;
-    }
+    } while (platformGpioIsHigh(ST25R_INT_PORT, ST25R_INT_PIN));
 
     /* Forward all interrupts, even masked ones to application */
     platformProtectST25RIrqStatus();

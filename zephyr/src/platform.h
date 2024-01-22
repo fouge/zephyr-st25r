@@ -214,10 +214,16 @@ platform_st25r_unprotect_comm();
     gpio_pin_set(port, pin, 0) /*!< Turns the given GPIO Low */
 #define platformGpioToogle(port, pin)                                          \
     gpio_pin_toggle(port, pin) /*!< Toogles the given GPIO */
+
+#ifdef CONFIG_ST25R_TRIGGER_NONE
+    #define platformGpioIsHigh(port, pin)                                          \
+    false /*!< Checks if the given pin is High */
+#else
 #define platformGpioIsHigh(port, pin)                                          \
-    gpio_pin_get(port, pin) /*!< Checks if the given LED is High */
+    gpio_pin_get(port, pin) /*!< Checks if the given pin is High */
+#endif
 #define platformGpioIsLow(port, pin)                                           \
-    (!platformGpioIsHigh(port, pin)) /*!< Checks if the given LED is Low */
+    (!platformGpioIsHigh(port, pin)) /*!< Checks if the given pin is Low */
 
 #define platformTimerCreate(t)                                                 \
     timerCalculateTimer(t) /*!< Create a timer with the given time (ms)     */

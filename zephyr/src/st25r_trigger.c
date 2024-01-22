@@ -65,8 +65,8 @@ st25r_work_cb(struct k_work *work)
 }
 #endif /* CONFIG_ST25R_TRIGGER_GLOBAL_THREAD */
 
-static gpio_pin_t s_int_pin;
-static const struct device *s_int_port;
+static gpio_pin_t s_int_pin = {0};
+static const struct device *s_int_port = NULL;
 
 gpio_pin_t
 platform_st25r_int_pin()
